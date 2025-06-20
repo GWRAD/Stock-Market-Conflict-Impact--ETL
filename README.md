@@ -21,13 +21,13 @@ We use **Apache Airflow** (via Docker) to schedule a daily pipeline that fetches
 
 ## ✅ Steps to Run This Project
 
-### 1. Clone the Repository
+# 1. Clone the Repository
 
 ```bash
 git clone https://github.com/GWRAD/Stock-Market-Conflict-Impact--ETL.git
 cd stock-conflict-airflow-pipeline
----
-### 2. Setup Apache Airflow Using Docker
+
+# 2. Setup Apache Airflow Using Docker
 Make sure you have Docker Desktop installed.
 curl -LfO https://airflow.apache.org/docs/apache-airflow/2.8.2/docker-compose.yaml
 mkdir -p dags logs plugins
