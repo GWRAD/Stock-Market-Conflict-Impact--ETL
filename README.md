@@ -19,20 +19,6 @@ We use **Apache Airflow** (via Docker) to schedule a daily pipeline that fetches
 
 ---
 
-## 📁 Repository Structure
-
-.
-├── dags/
-│ └── stock_etl_cof.py # Airflow DAG for fetching stock data
-├── event_windows/ # Output directory with ±5-day event data per ticker
-├── COF_data.csv, etc. # Full historical data per ticker
-├── PowerBI_Report.pbix # Interactive Power BI dashboard
-├── Stock Pipeline Powerbi.docx # Full walkthrough documentation
-
-
-
----
-
 ## ✅ Steps to Run This Project
 
 ### 1. Clone the Repository
@@ -40,14 +26,14 @@ We use **Apache Airflow** (via Docker) to schedule a daily pipeline that fetches
 ```bash
 git clone https://github.com/GWRAD/Stock-Market-Conflict-Impact--ETL.git
 cd stock-conflict-airflow-pipeline
-
+---
 ### 2. Setup Apache Airflow Using Docker
 Make sure you have Docker Desktop installed.
 curl -LfO https://airflow.apache.org/docs/apache-airflow/2.8.2/docker-compose.yaml
 mkdir -p dags logs plugins
 echo "AIRFLOW_UID=50000" > .env
 
-#### Start Airflow:
+Start Airflow:
 docker compose up airflow-init
 docker compose up
 
