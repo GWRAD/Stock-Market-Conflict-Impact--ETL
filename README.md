@@ -21,63 +21,90 @@ We use **Apache Airflow** (via Docker) to schedule a daily pipeline that fetches
 
 ## ✅ Steps to Run This Project
 
-# 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/GWRAD/Stock-Market-Conflict-Impact--ETL.git
 cd stock-conflict-airflow-pipeline
+```
 
-# 2. Setup Apache Airflow Using Docker
+---
+
+### 2. Setup Apache Airflow Using Docker
 
 Make sure you have Docker Desktop installed.
+
+```bash
 curl -LfO https://airflow.apache.org/docs/apache-airflow/2.8.2/docker-compose.yaml
 mkdir -p dags logs plugins
 echo "AIRFLOW_UID=50000" > .env
+```
 
 Start Airflow:
+
+```bash
 docker compose up airflow-init
 docker compose up
+```
 
-# 3. Open Airflow UI
+---
+
+### 3. Open Airflow UI
 
 Once all containers are up, access the Airflow UI at:
 
 [http://localhost:8080](http://localhost:8080)
 
-- **Username**: `airflow`
+- **Username**: `airflow`  
 - **Password**: `airflow`
 
 Enable the `stock_etl_cof` DAG from the dashboard to start the daily pipeline.
 
 ---
 
-# 4. Check Generated Files
+### 4. Check Generated Files
 
 After the DAG runs, check the `event_windows/` folder.  
 You’ll find files like:
-COF_Iran_Israel_War_2025.csv
-JPM_India_Pakistan_Sinddor_2025.csv
 
-
+```
+COF_Iran_Israel_War_2025.csv  
+JPM_India_Pakistan_Sinddor_2025.csv  
+```
 
 These contain ±5-day stock price windows around each selected conflict.
 
 ---
 
-# 5. Open Power BI Report
+### 5. Open Power BI Report
 
 1. Open `PowerBI_Report.pbix`  
-2. Make sure folder path to `event_windows/` is set correctly  
+2. Make sure the folder path to `event_windows/` is set correctly  
 3. Click `Home > Refresh` to load new data
 
 ---
 
-# ✅ Done!
+## 🎯 Dashboard Insights
+
+The Power BI report includes:
+
+- 📌 **Conflict Timeline Slicer**
+- 📌 **Sector Filter (Banking / Defense / Energy)**
+- 📈 **Stock Price Trend During Conflict**
+- 📊 **Latest Market Close vs Conflict Period Close**
+- 🧮 **20-Day and 50-Day Moving Average Table**
+- 💰 **Latest Closing Price Bar Chart**
+
+---
+
+## ✅ Done!
 
 You now have a live dashboard analyzing the impact of global conflicts on key sector stocks using:
 
-- **Automated ETL with Airflow**
-- **Historical finance data via Yahoo**
-- **Visualized in Power BI**
+- **Automated ETL with Airflow**  
+- **Historical financial data from Yahoo Finance**  
+- **Visual storytelling in Power BI**
+
+---
 
 
