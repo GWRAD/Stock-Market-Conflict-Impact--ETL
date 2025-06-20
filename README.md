@@ -59,6 +59,7 @@ Once all containers are up, access the Airflow UI at:
 - **Password**: `airflow`
 
 Enable the `stock_etl_cof` DAG from the dashboard to start the daily pipeline.
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/b9eb0bd7-f6cc-45d3-913c-16f1ff079107" />
 
 ---
 
@@ -94,6 +95,13 @@ The Power BI report includes:
 - 📊 **Latest Market Close vs Conflict Period Close**
 - 🧮 **20-Day and 50-Day Moving Average Table**
 - 💰 **Latest Closing Price Bar Chart**
+
+
+<img width="718" alt="image" src="https://github.com/user-attachments/assets/379972c5-ca9c-4c2f-9a9d-55cd0f8d04b9" />
+<img width="718" alt="image" src="https://github.com/user-attachments/assets/1bf50e95-4819-4d33-9088-f1934124f43e" />
+<img width="721" alt="image" src="https://github.com/user-attachments/assets/26ce813a-32ff-4a35-88e9-61c3a70f9229" />
+
+
 
 ---
 
